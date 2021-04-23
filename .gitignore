@@ -1,5 +1,8 @@
 data/
 .vscode/
+<<<<<<< HEAD
 .ipynb_checkpoints/
 numpy_slices/
 
+=======
+>>>>>>> parent of dab5354... Add simpleITK package example
