@@ -1,0 +1,6 @@
+opencv_python_headless==4.5.1.48
+segmentation_models_pytorch==0.1.3
+torch==1.7.1
+matplotlib==3.3.4
+numpy==1.19.2
+pydicom==2.1.2

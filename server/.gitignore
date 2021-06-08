@@ -1,0 +1,7 @@
+weights/*
+*.pth
+__pycache__/
+input/*
+output/*
+SAMPLE_INPUT/*
+
