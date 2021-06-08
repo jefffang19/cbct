@@ -3,4 +3,5 @@ __pycache__/
 *.dcm
 *.dicom
 SAMPLE_INPUT/*
+output/*
 
