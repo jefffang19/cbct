@@ -1,7 +1,6 @@
-weights/*
 *.pth
 __pycache__/
-input/*
-output/*
+*.dcm
+*.dicom
 SAMPLE_INPUT/*
 
