@@ -27,8 +27,8 @@ def upload_file(request):
     return render(request, 'run_model/upload.html', {'form': form})
 
 
-def interface(request):
-    return render(request, 'run_model/interface.html')
+def show_result(request):
+    return render(request, 'run_model/show_result.html')
 
 
 def home(request):
