@@ -57,4 +57,4 @@ def loading(request):
     copyfile('../../output/ori.jpg', 'run_model/static/run_model/ori.jpg')
     copyfile('../../output/proc.jpg', 'run_model/static/run_model/proc.jpg')
 
-    return render(request, 'run_model/show_result.html')
+    return HttpResponseRedirect('show_result')
