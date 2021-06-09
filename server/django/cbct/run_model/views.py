@@ -1,12 +1,15 @@
 from django.shortcuts import render
-from django.http import HttpResponse, HttpResponseRedirect
+from django.http import HttpResponse, HttpResponseRedirect, Http404
 from .forms import UploadFileForm
-from .utils import handle_uploaded_file
+from .utils import handle_uploaded_file, get_sample_input
 
 # Create your views here.
 
 
 def run_model(request):
+    '''
+     test run model api
+    '''
     import subprocess
 
     # run inference.py
@@ -15,7 +18,11 @@ def run_model(request):
     return HttpResponse('Running Model')
 
 
+# upload dicom template
+
+
 def upload_file(request):
+
     if request.method == 'POST':
         form = UploadFileForm(request.POST, request.FILES)
 
@@ -44,6 +51,9 @@ def home(request):
 
 
 def loading(request):
+    '''
+    run model with user uploaded image
+    '''
     from shutil import copyfile
     import subprocess
 
@@ -58,3 +68,21 @@ def loading(request):
     copyfile('../../output/proc.jpg', 'run_model/static/run_model/proc.jpg')
 
     return HttpResponseRedirect('show_result')
+
+
+def download(request, filenum):
+    '''
+    A controller to let you download sample input dicom file
+    '''
+    import os
+
+    file_path = get_sample_input(filenum)
+
+    if os.path.exists(file_path):
+        with open(file_path, 'rb') as fh:
+            response = HttpResponse(
+                fh.read(), content_type="application/vnd.ms-excel")
+            response['Content-Disposition'] = 'inline; filename=' + \
+                os.path.basename(file_path)
+            return response
+    raise Http404
