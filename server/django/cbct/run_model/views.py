@@ -20,7 +20,7 @@ def upload_file(request):
         form = UploadFileForm(request.POST, request.FILES)
         if form.is_valid():
             handle_uploaded_file(request.FILES['file'])
-            return HttpResponseRedirect('interface')
+            return HttpResponseRedirect('loading')
     else:
         form = UploadFileForm()
 
@@ -33,3 +33,7 @@ def show_result(request):
 
 def home(request):
     return render(request, 'run_model/index.html')
+
+
+def loading(request):
+    return render(request, 'run_model/loading.html')
