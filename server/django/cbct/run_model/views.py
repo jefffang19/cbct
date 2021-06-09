@@ -29,3 +29,7 @@ def upload_file(request):
 
 def interface(request):
     return render(request, 'run_model/interface.html')
+
+
+def home(request):
+    return render(request, 'run_model/index.html')
