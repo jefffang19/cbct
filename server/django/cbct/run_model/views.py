@@ -5,9 +5,13 @@ from django.http import HttpResponse
 
 
 def run_model(request):
-	import subprocess
+    import subprocess
 
-	# run inference.py
-	subprocess.run(['python', '../../inference.py'])
+    # run inference.py
+    subprocess.run(['python', '../../inference.py'])
 
-	return HttpResponse('Running Model')
+    return HttpResponse('Running Model')
+
+
+def interface(request):
+    return render(request, 'run_model/interface.html')
