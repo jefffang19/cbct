@@ -86,3 +86,7 @@ def download(request, filenum):
                 os.path.basename(file_path)
             return response
     raise Http404
+
+
+def download_page(request):
+    return render(request, 'run_model/download_page.html')

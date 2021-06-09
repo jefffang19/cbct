@@ -53,9 +53,13 @@
                 </nav>
                 <!-- Page content-->
                 <div class="container-fluid">
-                    <h1 class="mt-4">Processing Image</h1>
-                    <img src="{% static 'run_model/Spinner.svg' %}" alt="spinner">
-                    </form>
+                    <h1 class="mt-4">Download Sample Image</h1>
+
+                    <a href="{% url 'download' 1 %}">1.dcm</a><br>
+                    <a href="{% url 'download' 2 %}">2.dcm</a><br>
+                    <a href="{% url 'download' 3 %}">3.dcm</a><br>
+                    <a href="{% url 'download' 4 %}">4.dcm</a><br>
+                    
                 </div>
             </div>
         </div>
